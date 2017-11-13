@@ -8,7 +8,7 @@ namespace Projet_Final_P_O_VGu
 {
     class cVaisseau
     {
-
+        //LOGOGEKOFMNWEFN
         public cVaisseau()
         {
 
