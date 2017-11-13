@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Projet_Final_P_O_VGu
 {
-    class Program
+    class cVaisseauLeger:cVaisseau
     {
-        static void Main(string[] args)
+
+        public cVaisseauLeger() : base()
         {
 
-
-
         }
+
     }
 }

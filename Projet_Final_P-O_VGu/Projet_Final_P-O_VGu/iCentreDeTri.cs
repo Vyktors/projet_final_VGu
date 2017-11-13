@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projet_Final_P_O_VGu
 {
-    class Program
+    interface iCentreDeTri
     {
-        static void Main(string[] args)
-        {
+        int capaciteFileArrivee { get; set; }
 
+        int capaciteFileDepart { get; set; }
 
-
-        }
     }
 }
