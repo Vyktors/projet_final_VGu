@@ -11,8 +11,13 @@ namespace Projet_Final_P_O_VGu
 
         public cCentrePair()
         {
-
+            capaciteFileDepart = 30;
+            capaciteFileArrivee = 30;
         }
+
+        public virtual int capaciteFileDepart { get; set; }
+
+        public virtual int capaciteFileArrivee { get; set; }
 
     }
 }

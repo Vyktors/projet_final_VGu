@@ -15,7 +15,7 @@ namespace Projet_Final_P_O_VGu
         }
 
         /*Capacité du vaisseau en m3*/
-        public int capacite { get; set; }
+        public int capaciteVaisseau { get; set; }
 
         /*Quantité de plutonium*/
         public int qtPlutonium { get; set; }

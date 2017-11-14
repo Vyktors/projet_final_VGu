@@ -11,10 +11,13 @@ namespace Projet_Final_P_O_VGu
 
         public cCentreImpair()
         {
-
+            capaciteFileDepart = 45;
+            capaciteFileArrivee = 45;
         }
 
-        
+        public virtual int capaciteFileDepart { get; set; }
+
+        public virtual int capaciteFileArrivee { get; set; }
 
     }
 }
