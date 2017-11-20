@@ -9,7 +9,7 @@ namespace Projet_Final_P_O_VGu
     class cVaisseau
     {
 
-        public cVaisseau()
+        public cVaisseau(int qtPlutonium, int qtUranium, int qtML, int qtTerre, int qtRes)
         {
 
         }

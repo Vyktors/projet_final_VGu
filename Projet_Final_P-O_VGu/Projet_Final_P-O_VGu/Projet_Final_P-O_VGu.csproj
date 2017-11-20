@@ -45,6 +45,7 @@
     <Compile Include="cCentreImpair.cs" />
     <Compile Include="cCentrePair.cs" />
     <Compile Include="cMatiere.cs" />
+    <Compile Include="cTraitement.cs" />
     <Compile Include="cVaisseau.cs" />
     <Compile Include="cVaisseauCargo.cs" />
     <Compile Include="cVaisseauLeger.cs" />

@@ -11,7 +11,9 @@ namespace Projet_Final_P_O_VGu
         static void Main(string[] args)
         {
 
+            cTraitement t = new cTraitement();
 
+            t.selectionnerNbVaisseau();
 
         }
     }

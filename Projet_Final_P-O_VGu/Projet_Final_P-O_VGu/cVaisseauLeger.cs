@@ -9,7 +9,7 @@ namespace Projet_Final_P_O_VGu
     class cVaisseauLeger:cVaisseau
     {
 
-        public cVaisseauLeger() : base()
+        public cVaisseauLeger(int qtPlutonium, int qtUranium, int qtML, int qtTerre, int qtRes) : base(qtPlutonium, qtUranium, qtML, qtTerre, qtRes)
         {
 
         }

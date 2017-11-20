@@ -9,7 +9,7 @@ namespace Projet_Final_P_O_VGu
     class cVaisseauCargo:cVaisseau
     {
 
-        cVaisseauCargo() : base()
+        cVaisseauCargo(int qtPlutonium, int qtUranium, int qtML, int qtTerre, int qtRes) : base(qtPlutonium, qtUranium, qtML, qtTerre, qtRes)
         {
 
         }
