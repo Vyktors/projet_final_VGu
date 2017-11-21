@@ -31,7 +31,6 @@ namespace Projet_Final_P_O_VGu
         /*Affecte, da façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/
         private void affecterQuantite(int nombreVaissLeger, int nombreVaissCargo)
         {
-            bool qtPleine;
             Random rndQtMatiere;
             int qtPlutonium, qtUranium, qtML, qtTerre, qtRes, qtVaisseau;
 
@@ -45,41 +44,28 @@ namespace Projet_Final_P_O_VGu
 
             for (int i = 0; i < nombreVaissLeger; i++)
             {
-                qtPleine = false;
                 qtVaisseau = 108;
 
-                do
-                {
-                    qtVaisseau = 108;
-
-                    qtPlutonium = rndQtMatiere.Next(1, 109);
-                    qtVaisseau -= qtPlutonium;
+                qtPlutonium = rndQtMatiere.Next(1, qtVaisseau - 4);
+                qtVaisseau -= qtPlutonium;
 
 
-                    qtUranium = rndQtMatiere.Next(1, 109);
-                    qtVaisseau -= qtUranium;
+                qtUranium = rndQtMatiere.Next(1, qtVaisseau - 3);
+                qtVaisseau -= qtUranium;
 
 
-                    qtML = rndQtMatiere.Next(1, 109);
-                    qtVaisseau -= qtML;
+                qtML = rndQtMatiere.Next(1, qtVaisseau - 2);
+                qtVaisseau -= qtML;
 
 
-                    qtTerre = rndQtMatiere.Next(1, 109);
-                    qtVaisseau -= qtTerre;
+                qtTerre = rndQtMatiere.Next(1, qtVaisseau - 1);
+                qtVaisseau -= qtTerre;
 
 
-                    qtRes = rndQtMatiere.Next(1, 109);
-                    qtVaisseau -= qtRes;
+                qtRes = rndQtMatiere.Next(1, qtVaisseau);
+                qtVaisseau -= qtRes;
 
-                    if (qtVaisseau == 0)
-                    {
-                        qtPleine = true;
-                    }
-
-                }
-                while (qtPleine == false);
-
-                cVaisseauLeger vaisseauLeger = new cVaisseauLeger(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
+            cVaisseauLeger vaisseauLeger = new cVaisseauLeger(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
 
             }
 
@@ -87,41 +73,26 @@ namespace Projet_Final_P_O_VGu
 
             for (int i = 0; i < nombreVaissCargo; i++)
             {
-                qtPleine = false;
                 qtVaisseau = 367;
 
-
-                do
-                {
-                    qtVaisseau = 367;
-
-                    qtPlutonium = rndQtMatiere.Next(1, 368);
-                    qtVaisseau -= qtPlutonium;
+                qtPlutonium = rndQtMatiere.Next(1, qtVaisseau - 4);
+                qtVaisseau -= qtPlutonium;
 
 
-                    qtUranium = rndQtMatiere.Next(1, 368);
-                    qtVaisseau -= qtUranium;
+                qtUranium = rndQtMatiere.Next(1, qtVaisseau - 3);
+                qtVaisseau -= qtUranium;
 
 
-                    qtML = rndQtMatiere.Next(1, 368);
-                    qtVaisseau -= qtML;
+                qtML = rndQtMatiere.Next(1, qtVaisseau - 2);
+                qtVaisseau -= qtML;
 
 
-                    qtTerre = rndQtMatiere.Next(1, 368);
-                    qtVaisseau -= qtTerre;
+                qtTerre = rndQtMatiere.Next(1, qtVaisseau - 1);
+                qtVaisseau -= qtTerre;
 
 
-                    qtRes = rndQtMatiere.Next(1, 368);
-                    qtVaisseau -= qtRes;
-
-
-                    if (qtVaisseau == 0)
-                    {
-                        qtPleine = true;
-                    }
-
-                }
-                while (qtPleine == false);
+                qtRes = rndQtMatiere.Next(1, qtVaisseau);
+                qtVaisseau -= qtRes;
 
                 cVaisseauCargo vaisseauCargo = new cVaisseauCargo(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
             }
