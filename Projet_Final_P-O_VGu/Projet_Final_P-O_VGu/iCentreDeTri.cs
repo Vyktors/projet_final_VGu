@@ -8,9 +8,23 @@ namespace Projet_Final_P_O_VGu
 {
     interface iCentreDeTri
     {
-        int capaciteFileArrivee { get; set; }
+        /*Nombre maximum de vaisseaux pouvant être contenu dans une file de départ/arrivée*/
+        int capaciteFile { get; set; }
 
-        int capaciteFileDepart { get; set; }
+        /*Quantité maximum de plutonium*/
+        int capacitePlutonium { get; set; }
 
+        /*Quantité maximum d'uranium*/
+        int capaciteUranium { get; set; }
+
+        /*Quantité maximm de métaux lourds*/
+        int capaciteMetauxLourds { get; set; }
+
+        /*Quantité maximum de terre contaminée*/
+        int capaciteTerreContaminee { get; set; }
+
+        /*Quantité maximum de résidus de combustible fossile*/
+        int capaciteResidusCombusFos { get; set; }    
+       
     }
 }

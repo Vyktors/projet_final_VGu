@@ -5,3 +5,10 @@ C:\Users\Pierre-Olivier\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\P
 C:\Users\Pierre-Olivier\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\bin\Debug\Projet_Final_P-O_VGu.pdb
 C:\Users\Pierre-Olivier\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.exe
 C:\Users\Pierre-Olivier\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.pdb
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\bin\Debug\Projet_Final_P-O_VGu.exe.config
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\bin\Debug\Projet_Final_P-O_VGu.exe
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\bin\Debug\Projet_Final_P-O_VGu.pdb
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.csprojResolveAssemblyReference.cache
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.csproj.CoreCompileInputs.cache
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.exe
+C:\Users\gueri\Documents\GitHub\projet_final_VGu\Projet_Final_P-O_VGu\Projet_Final_P-O_VGu\obj\Debug\Projet_Final_P-O_VGu.pdb

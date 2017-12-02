@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Projet_Final_P_O_VGu
 {
+    //
+
     class cTraitement
     {
         int nbVaisseauLeger, nbVaisseauCargo;
@@ -18,17 +20,15 @@ namespace Projet_Final_P_O_VGu
         /*L'utilisateur décide du nombre de vaisseau léger et cargo*/
         public void selectionnerNbVaisseau()
         {
-            Console.Write("Entrez le nombre de vaisseaux légers désiré : ");
-            nbVaisseauLeger = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Entrez le nombre de vaisseaux cargos désiré : ");
-            nbVaisseauCargo = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Entrez le nombre de vaisseaux légers désiré (Le ratio vaisseau leger/ vaisseau cargo est de 1:1): ");
+            nbVaisseauLeger = Convert.ToInt32(Console.ReadLine())/2;
+            nbVaisseauCargo = nbVaisseauLeger;
 
             affecterQuantite(nbVaisseauLeger, nbVaisseauCargo);
 
         }
 
-        /*Affecte, da façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/
+        /*Créer tous les vaisseaux de départ , et affecte de façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/
         private void affecterQuantite(int nombreVaissLeger, int nombreVaissCargo)
         {
             Random rndQtMatiere;
