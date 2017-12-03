@@ -50,7 +50,7 @@ namespace Projet_Final_P_O_VGu
 
         public virtual int qtResidusCombusFos { get; set; }
 
-        public void chargerVaisseau(cVaisseau vaisseau)
+        public void chargerVaisseau()
         {
             
         }
@@ -75,7 +75,7 @@ namespace Projet_Final_P_O_VGu
 
                     vaisseau.qtPlutonium -= qtRestante;
 
-                    break;
+                    chargerVaisseau();
                 }
 
                 if (qtUranium + vaisseau.qtUranium < capaciteUranium)
@@ -90,7 +90,7 @@ namespace Projet_Final_P_O_VGu
 
                     vaisseau.qtUranium -= qtRestante;
 
-                    break;
+                    chargerVaisseau();
                 }
 
                 if (qtMetauxLourds + vaisseau.qtMetauxLourds < capaciteMetauxLourds)
@@ -105,7 +105,7 @@ namespace Projet_Final_P_O_VGu
 
                     vaisseau.qtMetauxLourds -= qtRestante;
 
-                    break;
+                    chargerVaisseau();
                 }
 
                 if (qtTerreContaminee + vaisseau.qtTerreContaminee < capaciteTerreContaminee)
@@ -120,7 +120,7 @@ namespace Projet_Final_P_O_VGu
 
                     vaisseau.qtTerreContaminee -= qtRestante;
 
-                    break;
+                    chargerVaisseau();
                 }
 
                 if (qtResidusCombusFos + vaisseau.qtResidusCombusFos < capaciteResidusCombusFos)
@@ -135,7 +135,7 @@ namespace Projet_Final_P_O_VGu
 
                     vaisseau.qtResidusCombusFos -= qtRestante;
 
-                    break;
+                    chargerVaisseau();
                 }
 
             }

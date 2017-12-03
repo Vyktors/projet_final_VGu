@@ -36,7 +36,7 @@ namespace Projet_Final_P_O_VGu
 
         int qtResidusCombusFos { get; set; }
 
-        void chargerVaisseau(cVaisseau v);
+        void chargerVaisseau();
 
         void dechargerVaisseau(cVaisseau v);
 

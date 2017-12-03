@@ -48,7 +48,7 @@ namespace Projet_Final_P_O_VGu
 
         public virtual int qtResidusCombusFos { get; set; }
 
-        public void chargerVaisseau(cVaisseau vaisseau)
+        public void chargerVaisseau()
         {
 
         }
