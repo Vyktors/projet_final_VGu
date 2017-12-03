@@ -14,9 +14,10 @@ namespace Projet_Final_P_O_VGu
         int nbVaisseau, nbVaisseauLeger, nbVaisseauCargo, ratioLegerCargo;
         Random nbRandom;
 
+        cCentrePair cc = new cCentrePair();
 
-        cListe listeDepart = new cListe();
-        cListe listeArrivee = new cListe();
+        cFiles listeDepart = new cFiles();
+        cFiles listeArrivee = new cFiles();
 
 
         public cTraitement()
@@ -49,7 +50,6 @@ namespace Projet_Final_P_O_VGu
         /*Créer tous les vaisseaux de départ , et affecte de façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/
         private void affecterQuantite(int nombreVaissLeger, int nombreVaissCargo)
         {
-            
             for (int i = 0; i < nombreVaissLeger; i++)
             {
                 cVaisseauLeger vaisseauLeger = new cVaisseauLeger();

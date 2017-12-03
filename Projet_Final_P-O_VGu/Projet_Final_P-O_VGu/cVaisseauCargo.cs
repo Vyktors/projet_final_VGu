@@ -8,12 +8,10 @@ namespace Projet_Final_P_O_VGu
 {
     class cVaisseauCargo:cVaisseau
     {
-
         public cVaisseauCargo() : base()
         {
             capaciteVaisseau = 367;
             attribuerRessources();
         }
-
     }
 }

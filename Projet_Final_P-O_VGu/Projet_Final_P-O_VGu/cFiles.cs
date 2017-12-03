@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_Final_P_O_VGu
 {
-    class cListe
+    class cFiles
     {
 
         cVaisseau ancre;
@@ -14,7 +14,7 @@ namespace Projet_Final_P_O_VGu
         int cptVaisseau;
 
 
-        public cListe()
+        public cFiles()
         {
             ancre = null;
             finFile = null;
@@ -84,6 +84,24 @@ namespace Projet_Final_P_O_VGu
                     }
                 }
             }
+        }
+
+        public cVaisseau retirerVaisseauFile()
+        {
+            cVaisseau vaisseauRetire;
+
+            vaisseauRetire = ancre;
+            ancre.VaisseauPrecedent = null;
+            ancre = vaisseauRetire.VaisseauSuivant;
+
+            cptVaisseau--;
+
+            if (cptVaisseau == 0)
+            {
+                finFile = ancre;
+            }
+
+            return vaisseauRetire;
         }
 
     }

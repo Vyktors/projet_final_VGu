@@ -9,6 +9,9 @@ namespace Projet_Final_P_O_VGu
     class cCentrePair:iCentreDeTri
     {
 
+        cFiles fileDepart = new cFiles();
+        cFiles fileArrivee = new cFiles();
+
         public cCentrePair()
         {
             capaciteFile = 30;
@@ -37,6 +40,107 @@ namespace Projet_Final_P_O_VGu
         /*Quantité maximum de résidus de combustible fossile*/
         public virtual int capaciteResidusCombusFos { get; set; }
 
+        public virtual int qtPlutonium { get; set; }
+
+        public virtual int qtUranium { get; set; }
+
+        public virtual int qtMetauxLourds { get; set; }
+
+        public virtual int qtTerreContaminee { get; set; }
+
+        public virtual int qtResidusCombusFos { get; set; }
+
+        public void chargerVaisseau()
+        {
+            
+        }
+
+        public void dechargerVaisseau(cVaisseau vaisseau)
+        {
+            int qtRestante;
+
+            qtRestante = 0;
+        
+            while (qtPlutonium != capacitePlutonium | qtUranium != capaciteUranium | qtMetauxLourds != capaciteMetauxLourds | qtTerreContaminee != capaciteTerreContaminee | qtResidusCombusFos != capaciteResidusCombusFos)
+            {
+                if (qtPlutonium + vaisseau.qtPlutonium < capacitePlutonium)
+                {
+                    qtPlutonium += vaisseau.qtPlutonium;
+                }
+                else
+                {
+                    qtRestante = capacitePlutonium - qtPlutonium;
+
+                    qtPlutonium += qtRestante;
+
+                    vaisseau.qtPlutonium -= qtRestante;
+
+                    chargerVaisseau();
+                }
+
+                if (qtUranium + vaisseau.qtUranium < capaciteUranium)
+                {
+                    qtUranium += vaisseau.qtUranium;
+                }
+                else
+                {
+                    qtRestante = capaciteUranium - qtUranium;
+
+                    qtUranium += qtRestante;
+
+                    vaisseau.qtUranium -= qtRestante;
+
+                    chargerVaisseau();
+                }
+
+                if (qtMetauxLourds + vaisseau.qtMetauxLourds < capaciteMetauxLourds)
+                {
+                    qtMetauxLourds += vaisseau.qtMetauxLourds;
+                }
+                else
+                {
+                    qtRestante = capaciteMetauxLourds - qtMetauxLourds;
+
+                    qtMetauxLourds += qtRestante;
+
+                    vaisseau.qtMetauxLourds -= qtRestante;
+
+                    chargerVaisseau();
+                }
+
+                if (qtTerreContaminee + vaisseau.qtTerreContaminee < capaciteTerreContaminee)
+                {
+                    qtTerreContaminee += vaisseau.qtTerreContaminee;
+                }
+                else
+                {
+                    qtRestante = capaciteTerreContaminee - qtTerreContaminee;
+
+                    qtTerreContaminee += qtRestante;
+
+                    vaisseau.qtTerreContaminee -= qtRestante;
+
+                    chargerVaisseau();
+                }
+
+                if (qtResidusCombusFos + vaisseau.qtResidusCombusFos < capaciteResidusCombusFos)
+                {
+                    qtResidusCombusFos += vaisseau.qtResidusCombusFos;
+                }
+                else
+                {
+                    qtRestante = capaciteResidusCombusFos - qtResidusCombusFos;
+
+                    qtResidusCombusFos += qtRestante;
+
+                    vaisseau.qtResidusCombusFos -= qtRestante;
+
+                    chargerVaisseau();
+                }
+
+            }
+
+        }
 
     }
 }

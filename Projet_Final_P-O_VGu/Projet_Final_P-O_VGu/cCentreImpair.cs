@@ -8,7 +8,8 @@ namespace Projet_Final_P_O_VGu
 {
     class cCentreImpair:iCentreDeTri
     {
-
+        cFiles fileDepart = new cFiles();
+        cFiles fileArrivee = new cFiles();
         public cCentreImpair()
         {
             capaciteFile = 45;
@@ -36,5 +37,25 @@ namespace Projet_Final_P_O_VGu
 
         /*Quantité maximum de résidus de combustible fossile*/
         public virtual int capaciteResidusCombusFos { get; set; }
+
+        public virtual int qtPlutonium { get; set; }
+
+        public virtual int qtUranium { get; set; }
+
+        public virtual int qtMetauxLourds { get; set; }
+
+        public virtual int qtTerreContaminee { get; set; }
+
+        public virtual int qtResidusCombusFos { get; set; }
+
+        public void chargerVaisseau()
+        {
+
+        }
+
+        public void dechargerVaisseau(cVaisseau vaisseau)
+        {
+
+        }
     }
 }

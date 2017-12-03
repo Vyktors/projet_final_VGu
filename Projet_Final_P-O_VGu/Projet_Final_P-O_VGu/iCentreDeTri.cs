@@ -24,7 +24,21 @@ namespace Projet_Final_P_O_VGu
         int capaciteTerreContaminee { get; set; }
 
         /*Quantité maximum de résidus de combustible fossile*/
-        int capaciteResidusCombusFos { get; set; }    
-       
+        int capaciteResidusCombusFos { get; set; }
+
+        int qtPlutonium { get; set; }
+
+        int qtUranium { get; set; }
+
+        int qtMetauxLourds { get; set; }
+
+        int qtTerreContaminee { get; set; }
+
+        int qtResidusCombusFos { get; set; }
+
+        void chargerVaisseau();
+
+        void dechargerVaisseau(cVaisseau v);
+
     }
 }

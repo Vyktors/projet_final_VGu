@@ -36,7 +36,6 @@ namespace Projet_Final_P_O_VGu
         /*Quantité de résidus de combustible fossile*/
         public int qtResidusCombusFos { get; set; }
 
-
         //Attribu les ressouces de façon aléatoire au vaisseau
         protected void attribuerRessources()
         {

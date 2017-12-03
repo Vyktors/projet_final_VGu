@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="cCentreImpair.cs" />
     <Compile Include="cCentrePair.cs" />
-    <Compile Include="cListe.cs" />
+    <Compile Include="cFiles.cs" />
     <Compile Include="cMatiere.cs" />
     <Compile Include="cTraitement.cs" />
     <Compile Include="cVaisseau.cs" />
