@@ -31,8 +31,6 @@ namespace Projet_Final_P_O_VGu
 
         /*Quantité de résidus de combustible fossile*/
         public int qtResidusCombusFos { get; set; }
-        
-
 
 
 
