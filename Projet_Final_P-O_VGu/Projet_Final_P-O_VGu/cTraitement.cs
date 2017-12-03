@@ -14,9 +14,10 @@ namespace Projet_Final_P_O_VGu
         int nbVaisseau, nbVaisseauLeger, nbVaisseauCargo, ratioLegerCargo;
         Random nbRandom;
 
+        cCentrePair cc = new cCentrePair();
 
-        cListe listeDepart = new cListe();
-        cListe listeArrivee = new cListe();
+        cFiles listeDepart = new cFiles();
+        cFiles listeArrivee = new cFiles();
 
 
         public cTraitement()
@@ -52,8 +53,6 @@ namespace Projet_Final_P_O_VGu
             
             int qtPlutonium, qtUranium, qtML, qtTerre, qtRes, qtVaisseau;
 
-            
-
             qtPlutonium = 0;
             qtUranium = 0;
             qtML = 0;
@@ -86,6 +85,7 @@ namespace Projet_Final_P_O_VGu
 
                 cVaisseauLeger vaisseauLeger = new cVaisseauLeger();
 
+                cc.dechargerVaisseau(vaisseauLeger);
 
                 //l.ajouterVaisseau(vaisseauLeger);
 

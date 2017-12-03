@@ -8,11 +8,9 @@ namespace Projet_Final_P_O_VGu
 {
     class cVaisseauLeger:cVaisseau
     {
-
         public cVaisseauLeger() : base()
         {
 
         }
-
     }
 }

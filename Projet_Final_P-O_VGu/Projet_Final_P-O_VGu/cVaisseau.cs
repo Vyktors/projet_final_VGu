@@ -34,7 +34,6 @@ namespace Projet_Final_P_O_VGu
         public int qtResidusCombusFos { get; set; }
         
 
-
         public cVaisseau VaisseauSuivant
         {
             get { return vaisseauSuivant; }
