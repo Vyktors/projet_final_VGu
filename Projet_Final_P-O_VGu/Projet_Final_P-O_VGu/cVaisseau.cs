@@ -8,6 +8,7 @@ namespace Projet_Final_P_O_VGu
 {
     class cVaisseau
     {
+        cVaisseau vaisseauSuivant, vaisseauPrecedent;
 
         public cVaisseau()
         {
@@ -34,6 +35,17 @@ namespace Projet_Final_P_O_VGu
         
 
 
+        public cVaisseau VaisseauSuivant
+        {
+            get { return vaisseauSuivant; }
+            set { vaisseauSuivant = value; }
+        }
+
+        public cVaisseau VaisseauPrecedent
+        {
+            get { return vaisseauPrecedent; }
+            set { vaisseauPrecedent = value; }
+        }
 
 
     }
