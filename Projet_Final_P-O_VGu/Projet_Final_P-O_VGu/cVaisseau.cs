@@ -9,10 +9,13 @@ namespace Projet_Final_P_O_VGu
     class cVaisseau
     {
         cVaisseau vaisseauSuivant, vaisseauPrecedent;
-
+        public int reste;
+        public Random nbRandom;
         public cVaisseau()
         {
+            nbRandom = new Random();
 
+            attribuerRessources();
         }
 
         /*Capacité du vaisseau en m3*/
@@ -32,20 +35,48 @@ namespace Projet_Final_P_O_VGu
 
         /*Quantité de résidus de combustible fossile*/
         public int qtResidusCombusFos { get; set; }
-        
 
+        //Attribu les ressouces de façon aléatoire au vaisseau
+        protected void attribuerRessources()
+        {
+
+            int ratio;
+            reste = capaciteVaisseau - 5;
+
+            ratio = nbRandom.Next(0, 101);
+            qtPlutonium = 1 + (reste * ratio / 100);
+            reste -= (reste * ratio / 100);
+
+            ratio = nbRandom.Next(0, 101);
+            qtUranium = 1 + (reste * ratio / 100);
+            reste -= (reste * ratio / 100);
+
+            ratio = nbRandom.Next(0, 101);
+            qtMetauxLourds = 1 + (reste * ratio / 100);
+            reste -= (reste * ratio / 100);
+
+            ratio = nbRandom.Next(0, 101);
+            qtTerreContaminee = 1 + (reste * ratio / 100);
+            reste -= (reste * ratio / 100);
+
+            qtResidusCombusFos = 1 + reste;
+        }
+
+
+        //Accesseurs
         public cVaisseau VaisseauSuivant
         {
             get { return vaisseauSuivant; }
             set { vaisseauSuivant = value; }
         }
 
+
+
         public cVaisseau VaisseauPrecedent
         {
             get { return vaisseauPrecedent; }
             set { vaisseauPrecedent = value; }
         }
-
 
     }
 }
