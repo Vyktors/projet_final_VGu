@@ -11,6 +11,7 @@ namespace Projet_Final_P_O_VGu
         static void Main(string[] args)
         {
             cFiles listeDepart = new cFiles();
+            cFiles listeCentreDeTri = new cFiles();
             cTraitement t = new cTraitement();
             cCentrePair centreTest = new cCentrePair();
             cVaisseau tempVaisseau;

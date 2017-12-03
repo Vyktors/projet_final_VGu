@@ -12,29 +12,76 @@ namespace Projet_Final_P_O_VGu
     {
 
         int nbVaisseau;
-        
-
-        
-
-
+        int nbCentreDeTri;
 
         public cTraitement()
         {
-            
+            nbVaisseau = -1;
+            nbCentreDeTri = -1;
         }
 
         /*L'utilisateur décide du nombre de vaisseau léger et cargo*/
         public void selectionnerNbVaisseau(cFiles lstDepart)
-        {
-            Console.Write("Entrez le nombre de vaisseaux désiré : ");
-            nbVaisseau = Convert.ToInt32(Console.ReadLine());
+        {        
+            //Empêche l'utilisateur de rentrez des lettre et ou un nombre négatif ou fractionnaire
+            do
+            {
+                try
+                {
+                    Console.Write("Entrez le nombre de vaisseaux désiré : "); ;
+                    nbVaisseau = Convert.ToInt32(Console.ReadLine());
+                    if(nbVaisseau < 0)
+                    {
+                        Console.WriteLine("Veuillez entrer un nombre positif\n");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Veuillez entrer un nombre valide\n");
+                }
+            } while (nbVaisseau < 0);           
 
             Console.WriteLine("Appuyer sur une touche pour attribuer les ressources aux vaisseaux");
             Console.ReadKey();
             affecterQuantite(nbVaisseau, lstDepart);
-
             Console.WriteLine("Tous les vaisseaux sont chargés");
 
+        }
+
+        public void selectionnerNbCentre(cFilesCentre lstCentreTri)
+        {
+            cCentreTri centre;
+            ////Empêche l'utilisateur de rentrez des lettre et ou un nombre négatif ou fractionnaire
+            do
+            {
+                try
+                {
+                    Console.Write("Entrez le nombre de centre de tri désiré : "); ;
+                    nbCentreDeTri = Convert.ToInt32(Console.ReadLine());
+                    if (nbCentreDeTri < 0)
+                    {
+                        Console.WriteLine("Veuillez entrer un nombre positif\n");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Veuillez entrer un nombre valide\n");
+                }
+            } while (nbCentreDeTri < 0);
+
+
+            for (int i = 1 ; i <= nbCentreDeTri; i++)
+            {
+                if(i%2 == 1)
+                {
+                    centre = new cCentreImpair();
+                }
+                else
+                {
+                    centre = new cCentrePair();
+                }
+                lstCentreTri.ajouterCentre(centre);
+            }
         }
 
         /*Créer tous les vaisseaux de départ , et affecte de façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/

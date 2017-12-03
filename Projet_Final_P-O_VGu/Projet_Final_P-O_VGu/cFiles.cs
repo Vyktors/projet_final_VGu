@@ -10,8 +10,6 @@ namespace Projet_Final_P_O_VGu
     {
 
         cVaisseau ancre;
-        
-        
 
 
         public cFiles()
@@ -21,7 +19,7 @@ namespace Projet_Final_P_O_VGu
             cptVaisseau = 0;
         }
 
-        public void ajouterVaisseauDebutFile(cVaisseau vaisseau)
+        private void ajouterVaisseauDebutFile(cVaisseau vaisseau)
         {
             if (ancre == null)
             {
@@ -39,7 +37,7 @@ namespace Projet_Final_P_O_VGu
             cptVaisseau++;
         }
 
-        public void ajouterVaisseauFinFile(cVaisseau vaisseau)
+        private void ajouterVaisseauFinFile(cVaisseau vaisseau)
         {
             finFile.VaisseauSuivant = vaisseau;
             vaisseau.VaisseauPrecedent = finFile;
