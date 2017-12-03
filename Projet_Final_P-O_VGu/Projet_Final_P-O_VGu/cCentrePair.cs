@@ -18,6 +18,7 @@ namespace Projet_Final_P_O_VGu
             qtTerreContaminee = new cTerreCont();
             qtResidusCombusFos = new cResidusCombusFos();
 
+            capaciteFile = 30;
             capacitePlutonium= 1005;
             capaciteUranium = 857;
             capaciteMetauxLourds = 3456;
@@ -83,6 +84,11 @@ namespace Projet_Final_P_O_VGu
                 vaisseau.plutonium.quantite -= qtRestante;
 
                 chargerVaisseau();
+
+                qtPlutonium.quantite += vaisseau.plutonium.quantite;
+
+                vaisseau.plutonium.quantite -= vaisseau.plutonium.quantite;
+
             }
 
             //Si il reste de l'espace dans le centre de tri pour de l'uranium
@@ -101,6 +107,10 @@ namespace Projet_Final_P_O_VGu
                 vaisseau.uranium.quantite -= qtRestante;
 
                 chargerVaisseau();
+
+                qtUranium.quantite += vaisseau.uranium.quantite;
+
+                vaisseau.uranium.quantite -= vaisseau.uranium.quantite;
             }
 
             //Si il reste de l'espace dans le centre de tri pour des Métaux lourds
@@ -119,6 +129,10 @@ namespace Projet_Final_P_O_VGu
                 vaisseau.metauxLourds.quantite -= qtRestante;
 
                 chargerVaisseau();
+
+                qtMetauxLourds.quantite += vaisseau.metauxLourds.quantite;
+
+                vaisseau.metauxLourds.quantite -= vaisseau.metauxLourds.quantite;
             }
 
             //Si il reste de l'espace dans le centre de tri pour de la terre contaminee
@@ -137,6 +151,10 @@ namespace Projet_Final_P_O_VGu
                 vaisseau.terreContaminee.quantite -= qtRestante;
 
                 chargerVaisseau();
+
+                qtTerreContaminee.quantite += vaisseau.terreContaminee.quantite;
+
+                vaisseau.terreContaminee.quantite -= vaisseau.terreContaminee.quantite;
             }
 
             //Si il reste de l'espace dans le centre de tri pour des Résidus 
@@ -155,6 +173,10 @@ namespace Projet_Final_P_O_VGu
                 vaisseau.residusCombusFos.quantite -= qtRestante;
 
                 chargerVaisseau();
+
+                qtResidusCombusFos.quantite += vaisseau.residusCombusFos.quantite;
+
+                vaisseau.residusCombusFos.quantite -= vaisseau.residusCombusFos.quantite;
             }
 
             

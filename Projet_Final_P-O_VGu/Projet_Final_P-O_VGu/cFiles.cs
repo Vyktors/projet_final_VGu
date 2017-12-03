@@ -10,8 +10,8 @@ namespace Projet_Final_P_O_VGu
     {
 
         cVaisseau ancre;
-        cVaisseau finFile;
-        int cptVaisseau;
+        
+        
 
 
         public cFiles()
@@ -104,5 +104,8 @@ namespace Projet_Final_P_O_VGu
             return vaisseauRetire;
         }
 
+        public cVaisseau finFile { get; set; }
+
+        public int cptVaisseau { get; set; }
     }
 }

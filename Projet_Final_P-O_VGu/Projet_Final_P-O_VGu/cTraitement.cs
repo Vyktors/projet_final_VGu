@@ -11,58 +11,63 @@ namespace Projet_Final_P_O_VGu
     class cTraitement
     {
 
-        int nbVaisseau, nbVaisseauLeger, nbVaisseauCargo, ratioLegerCargo;
-        Random nbRandom;
+        int nbVaisseau;
+        
 
-        cCentrePair cc = new cCentrePair();
+        
 
-        cFiles listeDepart = new cFiles();
-        cFiles listeArrivee = new cFiles();
 
 
         public cTraitement()
         {
-            nbRandom = new Random();
+            
         }
 
         /*L'utilisateur décide du nombre de vaisseau léger et cargo*/
-        public void selectionnerNbVaisseau()
+        public void selectionnerNbVaisseau(cFiles lstDepart)
         {
             Console.Write("Entrez le nombre de vaisseaux désiré : ");
             nbVaisseau = Convert.ToInt32(Console.ReadLine());
 
-            ratioLegerCargo = nbRandom.Next(0, 101);
-            nbVaisseauLeger = nbVaisseau * ratioLegerCargo / 100;
-            nbVaisseauCargo = nbVaisseau - nbVaisseauLeger;
-
-            Console.WriteLine("Le nombre de vaisseaus Legers à été attribué aléatoirement à : " + ratioLegerCargo + "%");
-            Console.WriteLine("     " + nbVaisseauLeger + " Vaisseaux légers");
-            Console.WriteLine("     " + nbVaisseauCargo + " Vaisseaux Cargo");
-
             Console.WriteLine("Appuyer sur une touche pour attribuer les ressources aux vaisseaux");
             Console.ReadKey();
-            affecterQuantite(nbVaisseauLeger, nbVaisseauCargo);
+            affecterQuantite(nbVaisseau, lstDepart);
 
             Console.WriteLine("Tous les vaisseaux sont chargés");
 
         }
 
         /*Créer tous les vaisseaux de départ , et affecte de façon aléatoire, la quantité de chaque matière pour chaque vaisseau*/
-        private void affecterQuantite(int nombreVaissLeger, int nombreVaissCargo)
+        private void affecterQuantite(int nombreVaiss, cFiles listeDepart)
         {
-            for (int i = 0; i < nombreVaissLeger; i++)
+            Random nbRandom = new Random();
+            int chance;
+            cVaisseau newVaisseau;
+            
+            for (int i = 0; i < nombreVaiss; i++)
             {
-                cVaisseauLeger vaisseauLeger = new cVaisseauLeger();
+                chance = nbRandom.Next(0, 2);
+                if(chance % 2 == 0)
+                {
+                    newVaisseau = new cVaisseauLeger();
+                }
+                else
+                {
+                    newVaisseau = new cVaisseauCargo(); 
+                }
+                listeDepart.ajouterVaisseau(newVaisseau);
             }
 
-
-            for (int i = 0; i < nombreVaissCargo; i++)
-            {
-                cVaisseauCargo vaisseauCargo = new cVaisseauCargo();
-
-                //l.ajouterVaisseau(vaisseauCargo);
-            }
 
         }
+
+
+        /* Transfert vaissau d'une file à une autre */
+        public void transfert(cVaisseau vaisseau)
+        {
+
+        }
+
+
     }
 }
