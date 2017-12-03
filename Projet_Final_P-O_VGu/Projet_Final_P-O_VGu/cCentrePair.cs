@@ -9,17 +9,23 @@ namespace Projet_Final_P_O_VGu
     class cCentrePair:iCentreDeTri
     {
 
-        cFiles fileDepart = new cFiles();
-        cFiles fileArrivee = new cFiles();
-
         public cCentrePair()
         {
-            capaciteFile = 30;
-            capacitePlutonium = 1005;
+
+            qtPlutonium = new cPlutonium();
+            qtUranium = new cUranium();
+            qtMetauxLourds = new cMetauxLourds();
+            qtTerreContaminee = new cTerreCont();
+            qtResidusCombusFos = new cResidusCombusFos();
+
+            capacitePlutonium= 1005;
             capaciteUranium = 857;
             capaciteMetauxLourds = 3456;
             capaciteTerreContaminee = 457;
             capaciteResidusCombusFos = 639;
+
+            fileDepart = new cFiles();
+            fileArrivee = new cFiles();
         }
 
         /*Capacité de vaisseau dans la file de départ et d'arrivée*/
@@ -27,118 +33,131 @@ namespace Projet_Final_P_O_VGu
 
         /*Quantité maximum de plutonium*/
         public virtual int capacitePlutonium { get; set; }
+        public virtual cPlutonium qtPlutonium { get; set; }
 
         /*Quantité maximum d'uranium*/
         public virtual int capaciteUranium { get; set; }
+        public virtual cUranium qtUranium { get; set; }
 
         /*Quantité maximm de métaux lourds*/
         public virtual int capaciteMetauxLourds { get; set; }
+        public virtual cMetauxLourds qtMetauxLourds { get; set; }
 
         /*Quantité maximum de terre contaminée*/
         public virtual int capaciteTerreContaminee { get; set; }
+        public virtual cTerreCont qtTerreContaminee { get; set; }
 
         /*Quantité maximum de résidus de combustible fossile*/
         public virtual int capaciteResidusCombusFos { get; set; }
+        public virtual cResidusCombusFos qtResidusCombusFos { get; set; }
 
-        public virtual int qtPlutonium { get; set; }
+        public cFiles fileDepart { get; set; }
 
-        public virtual int qtUranium { get; set; }
-
-        public virtual int qtMetauxLourds { get; set; }
-
-        public virtual int qtTerreContaminee { get; set; }
-
-        public virtual int qtResidusCombusFos { get; set; }
+        public cFiles fileArrivee { get; set; }
 
         public void chargerVaisseau()
         {
             
         }
 
+
         public void dechargerVaisseau(cVaisseau vaisseau)
         {
             int qtRestante;
 
             qtRestante = 0;
-        
-            while (qtPlutonium != capacitePlutonium | qtUranium != capaciteUranium | qtMetauxLourds != capaciteMetauxLourds | qtTerreContaminee != capaciteTerreContaminee | qtResidusCombusFos != capaciteResidusCombusFos)
+                   
+            //Si il reste de l'espace dans le centre de tri pour du Plutonium
+            if (qtPlutonium.quantite + vaisseau.plutonium.quantite < capacitePlutonium)
             {
-                if (qtPlutonium + vaisseau.qtPlutonium < capacitePlutonium)
-                {
-                    qtPlutonium += vaisseau.qtPlutonium;
-                }
-                else
-                {
-                    qtRestante = capacitePlutonium - qtPlutonium;
-
-                    qtPlutonium += qtRestante;
-
-                    vaisseau.qtPlutonium -= qtRestante;
-
-                    chargerVaisseau();
-                }
-
-                if (qtUranium + vaisseau.qtUranium < capaciteUranium)
-                {
-                    qtUranium += vaisseau.qtUranium;
-                }
-                else
-                {
-                    qtRestante = capaciteUranium - qtUranium;
-
-                    qtUranium += qtRestante;
-
-                    vaisseau.qtUranium -= qtRestante;
-
-                    chargerVaisseau();
-                }
-
-                if (qtMetauxLourds + vaisseau.qtMetauxLourds < capaciteMetauxLourds)
-                {
-                    qtMetauxLourds += vaisseau.qtMetauxLourds;
-                }
-                else
-                {
-                    qtRestante = capaciteMetauxLourds - qtMetauxLourds;
-
-                    qtMetauxLourds += qtRestante;
-
-                    vaisseau.qtMetauxLourds -= qtRestante;
-
-                    chargerVaisseau();
-                }
-
-                if (qtTerreContaminee + vaisseau.qtTerreContaminee < capaciteTerreContaminee)
-                {
-                    qtTerreContaminee += vaisseau.qtTerreContaminee;
-                }
-                else
-                {
-                    qtRestante = capaciteTerreContaminee - qtTerreContaminee;
-
-                    qtTerreContaminee += qtRestante;
-
-                    vaisseau.qtTerreContaminee -= qtRestante;
-
-                    chargerVaisseau();
-                }
-
-                if (qtResidusCombusFos + vaisseau.qtResidusCombusFos < capaciteResidusCombusFos)
-                {
-                    qtResidusCombusFos += vaisseau.qtResidusCombusFos;
-                }
-                else
-                {
-                    qtRestante = capaciteResidusCombusFos - qtResidusCombusFos;
-
-                    qtResidusCombusFos += qtRestante;
-
-                    vaisseau.qtResidusCombusFos -= qtRestante;
-
-                    chargerVaisseau();
-                }
-
+                qtPlutonium.quantite += vaisseau.plutonium.quantite;
+                vaisseau.plutonium.quantite -= vaisseau.plutonium.quantite;
             }
+            else
+            {
+                Console.WriteLine("Le centre de tri est rempli de Plutonium");
+                qtRestante = capacitePlutonium - qtPlutonium.quantite;
+
+                qtPlutonium.quantite += qtRestante;
+
+                vaisseau.plutonium.quantite -= qtRestante;
+
+                chargerVaisseau();
+            }
+
+            //Si il reste de l'espace dans le centre de tri pour de l'uranium
+            if (qtUranium.quantite + vaisseau.uranium.quantite < capaciteUranium)
+            {
+                qtUranium.quantite += vaisseau.uranium.quantite;
+                vaisseau.uranium.quantite -= vaisseau.uranium.quantite;
+            }
+            else
+            {
+                Console.WriteLine("Le centre de tri est rempli de Uranium");
+                qtRestante = capaciteUranium - qtUranium.quantite;
+
+                qtUranium.quantite += qtRestante;
+
+                vaisseau.uranium.quantite -= qtRestante;
+
+                chargerVaisseau();
+            }
+
+            //Si il reste de l'espace dans le centre de tri pour des Métaux lourds
+            if (qtMetauxLourds.quantite + vaisseau.metauxLourds.quantite < capaciteMetauxLourds)
+            {
+                qtMetauxLourds.quantite += vaisseau.metauxLourds.quantite;
+                vaisseau.metauxLourds.quantite -= vaisseau.metauxLourds.quantite;
+            }
+            else
+            {
+                Console.WriteLine("Le centre de tri est rempli de Metaux Lourds");
+                qtRestante = capaciteMetauxLourds - qtMetauxLourds.quantite;
+
+                qtMetauxLourds.quantite += qtRestante;
+
+                vaisseau.metauxLourds.quantite -= qtRestante;
+
+                chargerVaisseau();
+            }
+
+            //Si il reste de l'espace dans le centre de tri pour de la terre contaminee
+            if (qtTerreContaminee.quantite + vaisseau.terreContaminee.quantite < capaciteTerreContaminee)
+            {
+                qtTerreContaminee.quantite += vaisseau.terreContaminee.quantite;
+                vaisseau.terreContaminee.quantite -= vaisseau.terreContaminee.quantite;
+            }
+            else
+            {
+                Console.WriteLine("Le centre de tri est rempli de Terre Contaminee");
+                qtRestante = capaciteTerreContaminee - qtTerreContaminee.quantite;
+
+                qtTerreContaminee.quantite += qtRestante;
+
+                vaisseau.terreContaminee.quantite -= qtRestante;
+
+                chargerVaisseau();
+            }
+
+            //Si il reste de l'espace dans le centre de tri pour des Résidus 
+            if (qtResidusCombusFos.quantite + vaisseau.residusCombusFos.quantite< capaciteResidusCombusFos)
+            {
+                qtResidusCombusFos.quantite += vaisseau.residusCombusFos.quantite;
+                vaisseau.residusCombusFos.quantite -= vaisseau.residusCombusFos.quantite;
+            }
+            else
+            {
+                Console.WriteLine("Le centre de tri est rempli de Residus de combustible fossile");
+                qtRestante = capaciteResidusCombusFos - qtResidusCombusFos.quantite;
+
+                qtResidusCombusFos.quantite += qtRestante;
+
+                vaisseau.residusCombusFos.quantite -= qtRestante;
+
+                chargerVaisseau();
+            }
+
+            
 
         }
 

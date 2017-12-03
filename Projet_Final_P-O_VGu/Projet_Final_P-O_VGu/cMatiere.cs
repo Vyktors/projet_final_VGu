@@ -9,17 +9,20 @@ namespace Projet_Final_P_O_VGu
     class cMatiere
     {
 
-        public cMatiere(string _nom, int _tempsDechargement)
+        public cMatiere()
         {
-            Nom = _nom;
-            tempsDechargement = _tempsDechargement;
+            tempsDechargement = 0;
+            quantite = 0;
         }
 
         /*Nom de la matière*/
         public string Nom { get; set; }
 
         /*Temps de déchargement de  la matière en m3/secondes*/
-        int tempsDechargement { get; set; }
+        public int tempsDechargement { get; set; }
+
+        /*Quantité en m3*/
+        public int quantite { get; set; }
 
 
 

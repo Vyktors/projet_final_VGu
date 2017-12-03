@@ -15,6 +15,13 @@ namespace Projet_Final_P_O_VGu
         {
             nbRandom = new Random();
 
+            plutonium = new cPlutonium();
+            uranium = new cUranium();
+            metauxLourds = new cMetauxLourds();
+            terreContaminee = new cTerreCont();
+            residusCombusFos = new cResidusCombusFos();
+
+
             attribuerRessources();
         }
 
@@ -22,19 +29,19 @@ namespace Projet_Final_P_O_VGu
         public int capaciteVaisseau { get; set; }
 
         /*Quantité de plutonium*/
-        public int qtPlutonium { get; set; }
+        public cPlutonium plutonium { get; set; }
 
         /*Quantité d'uranium*/
-        public int qtUranium { get; set; }
+        public cUranium uranium { get; set; }
 
         /*Quantité de métaux lourds*/
-        public int qtMetauxLourds { get; set; }
+        public cMetauxLourds metauxLourds { get; set; }
 
         /*Quantité de terre contaminée*/
-        public int qtTerreContaminee { get; set; }
+        public cTerreCont terreContaminee { get; set; }
 
         /*Quantité de résidus de combustible fossile*/
-        public int qtResidusCombusFos { get; set; }
+        public cResidusCombusFos residusCombusFos { get; set; }
 
         //Attribu les ressouces de façon aléatoire au vaisseau
         protected void attribuerRessources()
@@ -47,25 +54,25 @@ namespace Projet_Final_P_O_VGu
 
             ratio = nbRandom.Next(0, 101);
             qtAjoute = (reste * ratio / 100);
-            qtPlutonium = 1 + qtAjoute ;
+            plutonium.quantite = 1 + qtAjoute ;
             reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
             qtAjoute = (reste * ratio / 100);
-            qtUranium = 1 + qtAjoute;
+            uranium.quantite = 1 + qtAjoute;
             reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
             qtAjoute = (reste * ratio / 100);
-            qtMetauxLourds = 1 + qtAjoute;
+            metauxLourds.quantite = 1 + qtAjoute;
             reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
             qtAjoute = (reste * ratio / 100);
-            qtTerreContaminee = 1 + qtAjoute;
+            terreContaminee.quantite = 1 + qtAjoute;
             reste -= qtAjoute;
 
-            qtResidusCombusFos = 1 + reste;
+            residusCombusFos.quantite = 1 + reste;
         }
 
 

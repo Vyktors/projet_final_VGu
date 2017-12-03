@@ -17,9 +17,11 @@ namespace Projet_Final_P_O_VGu
 
             cCentrePair centreTest = new cCentrePair();
 
-            cVaisseauCargo vaisseauTest = new cVaisseauCargo();
+            cVaisseauCargo vaisseauTest1 = new cVaisseauCargo();
 
-            centreTest.dechargerVaisseau(vaisseauTest);
+
+
+            centreTest.dechargerVaisseau(vaisseauTest1);
 
             Console.ReadKey();
         }

@@ -46,7 +46,12 @@
     <Compile Include="cCentrePair.cs" />
     <Compile Include="cFiles.cs" />
     <Compile Include="cMatiere.cs" />
+    <Compile Include="cMetauxLourds.cs" />
+    <Compile Include="cPlutonium.cs" />
+    <Compile Include="cResidusCombusFos.cs" />
+    <Compile Include="cTerreCont.cs" />
     <Compile Include="cTraitement.cs" />
+    <Compile Include="cUranium.cs" />
     <Compile Include="cVaisseau.cs" />
     <Compile Include="cVaisseauCargo.cs" />
     <Compile Include="cVaisseauLeger.cs" />
