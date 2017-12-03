@@ -8,6 +8,7 @@ namespace Projet_Final_P_O_VGu
 {
     class cVaisseau
     {
+        cVaisseau vaisseauSuivant, vaisseauPrecedent;
 
         public cVaisseau(int qtPlutonium, int qtUranium, int qtML, int qtTerre, int qtRes)
         {
@@ -32,6 +33,17 @@ namespace Projet_Final_P_O_VGu
         /*Quantité de résidus de combustible fossile*/
         public int qtResidusCombusFos { get; set; }
 
+        public cVaisseau VaisseauSuivant
+        {
+            get { return vaisseauSuivant; }
+            set { vaisseauSuivant = value; }
+        }
+
+        public cVaisseau VaisseauPrecedent
+        {
+            get { return vaisseauPrecedent; }
+            set { vaisseauPrecedent = value; }
+        }
 
 
     }

@@ -8,6 +8,9 @@ namespace Projet_Final_P_O_VGu
 {
     class cTraitement
     {
+
+        cListe listeDepart = new cListe();
+        cListe listeArrivee = new cListe();
         int nbVaisseauLeger, nbVaisseauCargo;
 
         public cTraitement()
@@ -62,10 +65,12 @@ namespace Projet_Final_P_O_VGu
                 qtVaisseau -= qtTerre;
 
 
-                qtRes = rndQtMatiere.Next(1, qtVaisseau);
+                qtRes = rndQtMatiere.Next(qtVaisseau);
                 qtVaisseau -= qtRes;
 
-            cVaisseauLeger vaisseauLeger = new cVaisseauLeger(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
+                cVaisseauLeger vaisseauLeger = new cVaisseauLeger(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
+
+                l.ajouterVaisseau(vaisseauLeger);
 
             }
 
@@ -91,10 +96,12 @@ namespace Projet_Final_P_O_VGu
                 qtVaisseau -= qtTerre;
 
 
-                qtRes = rndQtMatiere.Next(1, qtVaisseau);
+                qtRes = rndQtMatiere.Next(qtVaisseau);
                 qtVaisseau -= qtRes;
 
                 cVaisseauCargo vaisseauCargo = new cVaisseauCargo(qtPlutonium, qtUranium, qtML, qtTerre, qtRes);
+
+                l.ajouterVaisseau(vaisseauCargo);
             }
 
         }
