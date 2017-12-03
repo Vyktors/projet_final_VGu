@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="cCentreImpair.cs" />
     <Compile Include="cCentrePair.cs" />
+    <Compile Include="cCentreTri.cs" />
     <Compile Include="cFiles.cs" />
+    <Compile Include="cFilesCentre.cs" />
     <Compile Include="cMatiere.cs" />
     <Compile Include="cMetauxLourds.cs" />
     <Compile Include="cPlutonium.cs" />

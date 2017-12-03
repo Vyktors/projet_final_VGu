@@ -9,7 +9,8 @@ namespace Projet_Final_P_O_VGu
     class cCentreTri
     {
         cCentreTri centreSuivant, centrePrecedent;
-        public cCentreTri()
+
+        public cCentreTri(int nb)
         {
             qtPlutonium = new cPlutonium();
             qtUranium = new cUranium();
@@ -20,30 +21,34 @@ namespace Projet_Final_P_O_VGu
             fileDepart = new cFiles();
             fileArrivee = new cFiles();
 
+            numCentre = nb;
         }
 
+        //Numero du centre
+        public int numCentre { get; set; }
+
         /*Capacité de vaisseau dans la file de départ et d'arrivée*/
-        public virtual int capaciteFile { get; set; }
+        public int capaciteFile { get; set; }
 
         /*Quantité maximum de plutonium*/
-        public virtual int capacitePlutonium { get; set; }
-        public virtual cPlutonium qtPlutonium { get; set; }
+        public int capacitePlutonium { get; set; }
+        public cPlutonium qtPlutonium { get; set; }
 
         /*Quantité maximum d'uranium*/
-        public virtual int capaciteUranium { get; set; }
-        public virtual cUranium qtUranium { get; set; }
+        public int capaciteUranium { get; set; }
+        public cUranium qtUranium { get; set; }
 
         /*Quantité maximm de métaux lourds*/
-        public virtual int capaciteMetauxLourds { get; set; }
-        public virtual cMetauxLourds qtMetauxLourds { get; set; }
+        public int capaciteMetauxLourds { get; set; }
+        public cMetauxLourds qtMetauxLourds { get; set; }
 
         /*Quantité maximum de terre contaminée*/
-        public virtual int capaciteTerreContaminee { get; set; }
-        public virtual cTerreCont qtTerreContaminee { get; set; }
+        public int capaciteTerreContaminee { get; set; }
+        public cTerreCont qtTerreContaminee { get; set; }
 
         /*Quantité maximum de résidus de combustible fossile*/
-        public virtual int capaciteResidusCombusFos { get; set; }
-        public virtual cResidusCombusFos qtResidusCombusFos { get; set; }
+        public int capaciteResidusCombusFos { get; set; }
+        public cResidusCombusFos qtResidusCombusFos { get; set; }
 
         public cFiles fileDepart { get; set; }
 

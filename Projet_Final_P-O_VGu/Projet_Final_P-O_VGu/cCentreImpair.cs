@@ -9,7 +9,7 @@ namespace Projet_Final_P_O_VGu
     class cCentreImpair:cCentreTri
     {
         
-        public cCentreImpair():base()
+        public cCentreImpair(int nb):base( nb)
         {
             capaciteFile = 45;
             capacitePlutonium = 3067;

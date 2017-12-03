@@ -11,9 +11,9 @@ namespace Projet_Final_P_O_VGu
         static void Main(string[] args)
         {
             cFiles listeDepart = new cFiles();
-            cFiles listeCentreDeTri = new cFiles();
+            cFilesCentre listeCentreDeTri = new cFilesCentre();
             cTraitement t = new cTraitement();
-            cCentrePair centreTest = new cCentrePair();
+            cCentrePair centreTest = new cCentrePair(0);
             cVaisseau tempVaisseau;
 
 
@@ -21,26 +21,33 @@ namespace Projet_Final_P_O_VGu
 
             t.selectionnerNbVaisseau(listeDepart);
 
+            t.selectionnerNbCentre(listeCentreDeTri);
+
             do
             {
-                //Si la file d'arrivée du centre de tri n'est pas à sa capactié maximum de vaisseau, en ajouter
-                if(centreTest.fileArrivee.cptVaisseau < centreTest.capaciteFile)
-                {
-                    tempVaisseau = listeDepart.retirerVaisseauFile();
-                    centreTest.fileArrivee.ajouterVaisseau(tempVaisseau);
-                }
-                //Décharger un vaisseau
-                if (centreTest.fileArrivee.cptVaisseau >= 1)
-                {
-                    centreTest.dechargerVaisseau(centreTest.fileArrivee.finFile);
-                    tempVaisseau = centreTest.fileArrivee.retirerVaisseauFile();
-                    centreTest.fileDepart.ajouterVaisseau(tempVaisseau);
-                }
+
+                
                 
             }while(listeDepart.cptVaisseau > 0);
 
             
-
+            void transferer(cCentreTri prochainCentre)
+            {
+                //Si la file d'arrivée du centre de tri n'est pas à sa capactié maximum de vaisseau, en ajouter
+                if (prochainCentre.fileArrivee.cptVaisseau < prochainCentre.capaciteFile)
+                {
+                    tempVaisseau = prochainCentre.CentrePrecedent.fileDepart.retirerVaisseauFile();
+                    prochainCentre.fileArrivee.ajouterVaisseau(tempVaisseau);
+                }
+                //Décharger un vaisseau
+                if (prochainCentre.fileArrivee.cptVaisseau >= 1)
+                {
+                    prochainCentre.dechargerVaisseau(centreTest.fileArrivee.finFile);
+                    tempVaisseau = prochainCentre.fileArrivee.retirerVaisseauFile();
+                    prochainCentre.fileDepart.ajouterVaisseau(tempVaisseau);
+                }
+                transferer(prochainCentre.CentreSuivant);
+            }
 
 
 

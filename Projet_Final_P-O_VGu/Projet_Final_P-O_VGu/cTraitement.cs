@@ -74,11 +74,11 @@ namespace Projet_Final_P_O_VGu
             {
                 if(i%2 == 1)
                 {
-                    centre = new cCentreImpair();
+                    centre = new cCentreImpair(i);
                 }
                 else
                 {
-                    centre = new cCentrePair();
+                    centre = new cCentrePair(i);
                 }
                 lstCentreTri.ajouterCentre(centre);
             }
