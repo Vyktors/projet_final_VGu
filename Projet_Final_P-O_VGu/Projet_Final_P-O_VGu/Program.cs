@@ -10,25 +10,29 @@ namespace Projet_Final_P_O_VGu
     {
         static void Main(string[] args)
         {
+
+
             cFiles listeDepart = new cFiles();
             cFilesCentre listeCentreDeTri = new cFilesCentre();
             cTraitement t = new cTraitement();
-            cCentrePair centreTest = new cCentrePair(0);
+            cCentrePair centreDepart = new cCentrePair(0);
             cVaisseau tempVaisseau;
 
 
             //Demande à l'utilisateur le nombre de vaisseau, les créer et les stocks dans listeDépart
+            
 
-            t.selectionnerNbVaisseau(listeDepart);
+            t.selectionnerNbVaisseau(centreDepart.fileDepart);
 
+            listeCentreDeTri.ajouterCentre(centreDepart);
             t.selectionnerNbCentre(listeCentreDeTri);
 
             do
             {
 
-                
-                
-            }while(listeDepart.cptVaisseau > 0);
+                transferer(centreDepart.CentreSuivant);                
+
+            }while(centreDepart.fileDepart.cptVaisseau > 0);
 
             
             void transferer(cCentreTri prochainCentre)
@@ -42,11 +46,25 @@ namespace Projet_Final_P_O_VGu
                 //Décharger un vaisseau
                 if (prochainCentre.fileArrivee.cptVaisseau >= 1)
                 {
-                    prochainCentre.dechargerVaisseau(centreTest.fileArrivee.finFile);
+                    //Décaharge le vaisseau
+                    prochainCentre.dechargerVaisseau(prochainCentre.fileArrivee.finFile);
+
+                    //Transfère le vaisseau vide de la file d'arrivée à la file de départ
                     tempVaisseau = prochainCentre.fileArrivee.retirerVaisseauFile();
                     prochainCentre.fileDepart.ajouterVaisseau(tempVaisseau);
                 }
-                transferer(prochainCentre.CentreSuivant);
+
+
+                if(prochainCentre.numCentre == listeCentreDeTri.cptCentre)
+                {
+
+                }
+                else if (prochainCentre.CentreSuivant != null)
+                {
+                    transferer(prochainCentre.CentreSuivant);
+                }
+                else return;
+                
             }
 
 
