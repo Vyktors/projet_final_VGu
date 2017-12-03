@@ -42,23 +42,29 @@ namespace Projet_Final_P_O_VGu
         {
 
             int ratio;
+            int qtAjoute;
+
             reste = capaciteVaisseau - 5;
 
             ratio = nbRandom.Next(0, 101);
-            qtPlutonium = 1 + (reste * ratio / 100);
-            reste -= (reste * ratio / 100);
+            qtAjoute = (reste * ratio / 100);
+            qtPlutonium = 1 + qtAjoute ;
+            reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
-            qtUranium = 1 + (reste * ratio / 100);
-            reste -= (reste * ratio / 100);
+            qtAjoute = (reste * ratio / 100);
+            qtUranium = 1 + qtAjoute;
+            reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
-            qtMetauxLourds = 1 + (reste * ratio / 100);
-            reste -= (reste * ratio / 100);
+            qtAjoute = (reste * ratio / 100);
+            qtMetauxLourds = 1 + qtAjoute;
+            reste -= qtAjoute;
 
             ratio = nbRandom.Next(0, 101);
-            qtTerreContaminee = 1 + (reste * ratio / 100);
-            reste -= (reste * ratio / 100);
+            qtAjoute = (reste * ratio / 100);
+            qtTerreContaminee = 1 + qtAjoute;
+            reste -= qtAjoute;
 
             qtResidusCombusFos = 1 + reste;
         }

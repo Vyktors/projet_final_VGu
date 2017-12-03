@@ -53,8 +53,6 @@ namespace Projet_Final_P_O_VGu
             for (int i = 0; i < nombreVaissLeger; i++)
             {
                 cVaisseauLeger vaisseauLeger = new cVaisseauLeger();
-
-                //l.ajouterVaisseau(vaisseauLeger);
             }
 
 
