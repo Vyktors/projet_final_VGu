@@ -28,6 +28,8 @@ namespace Projet_Final_P_O_VGu
         /*Capacité du vaisseau en m3*/
         public int capaciteVaisseau { get; set; }
 
+        public int qtMatiereVaisseau { get; set; }
+
         /*Quantité de plutonium*/
         public cPlutonium plutonium { get; set; }
 
@@ -75,13 +77,9 @@ namespace Projet_Final_P_O_VGu
             residusCombusFos.quantite = 1 + reste;
         }
 
-        public int verifierQuantiteMatiere()
+        public void verifierQuantiteMatiere()
         {
-            int qtMatiereVaisseau;
-
             qtMatiereVaisseau = plutonium.quantite + uranium.quantite + metauxLourds.quantite + terreContaminee.quantite + residusCombusFos.quantite;
-
-            return qtMatiereVaisseau;
         }
 
         //Accesseurs

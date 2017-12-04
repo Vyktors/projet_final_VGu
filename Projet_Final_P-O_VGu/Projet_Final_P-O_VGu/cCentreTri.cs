@@ -60,7 +60,7 @@ namespace Projet_Final_P_O_VGu
 
             qtRestante = 0;
 
-            qtMatiere = this.fileDepart.finFile.verifierQuantiteMatiere();
+            qtMatiere = this.fileDepart.finFile.qtMatiereVaisseau;
 
             switch (matiere.Nom)
             {
@@ -72,13 +72,13 @@ namespace Projet_Final_P_O_VGu
                         this.fileDepart.finFile.plutonium.quantite += qtRestante;
 
                         matiere.quantite -= qtRestante;
-
                     }
                     else
                     {
                         this.fileDepart.finFile.plutonium.quantite += matiere.quantite;
                     }
                     break;
+
                 case "Uranium":
                     if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
                     {
@@ -94,6 +94,7 @@ namespace Projet_Final_P_O_VGu
                         this.fileDepart.finFile.uranium.quantite += matiere.quantite;
                     }
                     break;
+
                 case "Métaux Lourds":
                     if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
                     {
@@ -109,6 +110,7 @@ namespace Projet_Final_P_O_VGu
                         this.fileDepart.finFile.metauxLourds.quantite += matiere.quantite;
                     }
                     break;
+
                 case "Terre contaminée":
                     if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
                     {
@@ -124,6 +126,7 @@ namespace Projet_Final_P_O_VGu
                         this.fileDepart.finFile.terreContaminee.quantite += matiere.quantite;
                     }
                     break;
+
                 case "Résidus de combustibles fossibles":
                     if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
                     {
@@ -140,10 +143,7 @@ namespace Projet_Final_P_O_VGu
                     }
                     break;
             }
-            
-
         }
-
 
         public void dechargerVaisseau(cVaisseau vaisseau)
         {
