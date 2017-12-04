@@ -21,8 +21,6 @@ namespace Projet_Final_P_O_VGu
             terreContaminee = new cTerreCont();
             residusCombusFos = new cResidusCombusFos();
 
-
-            attribuerRessources();
         }
 
         /*Capacité du vaisseau en m3*/

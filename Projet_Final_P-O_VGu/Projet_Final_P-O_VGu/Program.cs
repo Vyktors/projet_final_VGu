@@ -53,7 +53,7 @@ namespace Projet_Final_P_O_VGu
                 }
 
 
-                if(prochainCentre.numCentre == listeCentreDeTri.cptCentre)
+                if(prochainCentre.numCentre == listeCentreDeTri.cptCentre -1 && centreDepart.fileDepart.cptVaisseau == 0)
                 {
                     Console.WriteLine("Dernier Centre");
                     Console.ReadKey();
