@@ -70,7 +70,7 @@ namespace Projet_Final_P_O_VGu
             } while (nbCentreDeTri < 0);
 
 
-            for (int i = 1 ; i <= nbCentreDeTri; i++)
+            for (int i = 1 ; i <= nbCentreDeTri - 1; i++)
             {
                 if(i%2 == 1)
                 {
