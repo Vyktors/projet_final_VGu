@@ -75,6 +75,14 @@ namespace Projet_Final_P_O_VGu
             residusCombusFos.quantite = 1 + reste;
         }
 
+        public int verifierQuantiteMatiere()
+        {
+            int qtMatiereVaisseau;
+
+            qtMatiereVaisseau = plutonium.quantite + uranium.quantite + metauxLourds.quantite + terreContaminee.quantite + residusCombusFos.quantite;
+
+            return qtMatiereVaisseau;
+        }
 
         //Accesseurs
         public cVaisseau VaisseauSuivant

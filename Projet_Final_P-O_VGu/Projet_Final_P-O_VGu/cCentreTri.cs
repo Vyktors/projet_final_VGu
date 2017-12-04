@@ -54,8 +54,93 @@ namespace Projet_Final_P_O_VGu
 
         public cFiles fileArrivee { get; set; }
 
-        public void chargerVaisseau()
+        public void chargerVaisseau(cMatiere matiere)
         {
+            int qtRestante, qtMatiere;
+
+            qtRestante = 0;
+
+            qtMatiere = this.fileDepart.finFile.verifierQuantiteMatiere();
+
+            switch (matiere.Nom)
+            {
+                case "Plutonium":
+                    if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
+                    {
+                        qtRestante = this.fileDepart.finFile.capaciteVaisseau - qtMatiere;
+
+                        this.fileDepart.finFile.plutonium.quantite += qtRestante;
+
+                        matiere.quantite -= qtRestante;
+
+                    }
+                    else
+                    {
+                        this.fileDepart.finFile.plutonium.quantite += matiere.quantite;
+                    }
+                    break;
+                case "Uranium":
+                    if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
+                    {
+                        qtRestante = this.fileDepart.finFile.capaciteVaisseau - qtMatiere;
+
+                        this.fileDepart.finFile.uranium.quantite += qtRestante;
+
+                        matiere.quantite -= qtRestante;
+
+                    }
+                    else
+                    {
+                        this.fileDepart.finFile.uranium.quantite += matiere.quantite;
+                    }
+                    break;
+                case "Métaux Lourds":
+                    if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
+                    {
+                        qtRestante = this.fileDepart.finFile.capaciteVaisseau - qtMatiere;
+
+                        this.fileDepart.finFile.metauxLourds.quantite += qtRestante;
+
+                        matiere.quantite -= qtRestante;
+
+                    }
+                    else
+                    {
+                        this.fileDepart.finFile.metauxLourds.quantite += matiere.quantite;
+                    }
+                    break;
+                case "Terre contaminée":
+                    if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
+                    {
+                        qtRestante = this.fileDepart.finFile.capaciteVaisseau - qtMatiere;
+
+                        this.fileDepart.finFile.terreContaminee.quantite += qtRestante;
+
+                        matiere.quantite -= qtRestante;
+
+                    }
+                    else
+                    {
+                        this.fileDepart.finFile.terreContaminee.quantite += matiere.quantite;
+                    }
+                    break;
+                case "Résidus de combustibles fossibles":
+                    if ((qtMatiere += matiere.quantite) > this.fileDepart.finFile.capaciteVaisseau)
+                    {
+                        qtRestante = this.fileDepart.finFile.capaciteVaisseau - qtMatiere;
+
+                        this.fileDepart.finFile.residusCombusFos.quantite += qtRestante;
+
+                        matiere.quantite -= qtRestante;
+
+                    }
+                    else
+                    {
+                        this.fileDepart.finFile.residusCombusFos.quantite += matiere.quantite;
+                    }
+                    break;
+            }
+            
 
         }
 
@@ -81,7 +166,7 @@ namespace Projet_Final_P_O_VGu
 
                 vaisseau.plutonium.quantite -= qtRestante;
 
-                chargerVaisseau();
+                chargerVaisseau(qtPlutonium);
 
                 qtPlutonium.quantite += vaisseau.plutonium.quantite;
 
@@ -104,7 +189,7 @@ namespace Projet_Final_P_O_VGu
 
                 vaisseau.uranium.quantite -= qtRestante;
 
-                chargerVaisseau();
+                chargerVaisseau(qtUranium);
 
                 qtUranium.quantite += vaisseau.uranium.quantite;
 
@@ -126,7 +211,7 @@ namespace Projet_Final_P_O_VGu
 
                 vaisseau.metauxLourds.quantite -= qtRestante;
 
-                chargerVaisseau();
+                chargerVaisseau(qtMetauxLourds);
 
                 qtMetauxLourds.quantite += vaisseau.metauxLourds.quantite;
 
@@ -148,7 +233,7 @@ namespace Projet_Final_P_O_VGu
 
                 vaisseau.terreContaminee.quantite -= qtRestante;
 
-                chargerVaisseau();
+                chargerVaisseau(qtTerreContaminee);
 
                 qtTerreContaminee.quantite += vaisseau.terreContaminee.quantite;
 
@@ -170,23 +255,19 @@ namespace Projet_Final_P_O_VGu
 
                 vaisseau.residusCombusFos.quantite -= qtRestante;
 
-                chargerVaisseau();
+                chargerVaisseau(qtResidusCombusFos);
 
                 qtResidusCombusFos.quantite += vaisseau.residusCombusFos.quantite;
 
                 vaisseau.residusCombusFos.quantite -= vaisseau.residusCombusFos.quantite;
             }
-
-
-
         }
+
         public cCentreTri CentreSuivant
         {
             get { return centreSuivant; }
             set { centreSuivant = value; }
         }
-
-
 
         public cCentreTri CentrePrecedent
         {

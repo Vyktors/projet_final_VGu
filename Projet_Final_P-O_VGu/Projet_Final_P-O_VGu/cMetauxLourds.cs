@@ -11,7 +11,7 @@ namespace Projet_Final_P_O_VGu
 
         public cMetauxLourds() : base()
         {
-            Nom = "Métaux Lourd";
+            Nom = "Métaux Lourds";
         }
     }
 }
